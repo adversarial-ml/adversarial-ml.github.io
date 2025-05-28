@@ -30,5 +30,8 @@
     "devDependencies": {
         "gh-pages": "^6.1.0",
         "http-server": "^14.1.1"
+    },
+    "dependencies": {
+        "simple-mind-map": "^0.14.0-fix.1"
     }
 }
