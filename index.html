@@ -32,11 +32,14 @@
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet"
+      href="https://unpkg.com/simple-mind-map/dist/simpleMindMap.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <script src="https://unpkg.com/simple-mind-map/dist/simpleMindMap.umd.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -156,6 +159,14 @@
   </div>
 </section>
 <!-- End paper abstract -->
+
+<section class="section">
+  <div class="container is-max-desktop" style="padding-top:2rem;">
+    <div id="mindMapContainer"
+         style="width:100%; height:500px; border:1px solid #ddd;"></div>
+  </div>
+</section>
+
 
 
 <!-- Image carousel -->
@@ -308,5 +319,218 @@
 
     <!-- End of Statcounter Code -->
 
-  </body>
-  </html>
+<!-- ========== Scripts for Mind Map========== -->
+<script src="https://unpkg.com/simple-mind-map@0.14.0/dist/simpleMindMap.umd.min.js"></script>
+
+<script>
+/* --------- 1. 定义原始层次数据 --------- */
+const data = {
+  data: { text: 'Adversarial Machine Learning' },
+  children: [
+    /* =============== Backdoor attack ================= */
+    {
+      data: { text: 'Backdoor attack' },
+      children: [
+        {
+          data: { text: 'Backdoor injection' },
+          children: [
+            {
+              data: { text: 'Data-poisoning' },
+              children: [
+                {
+                  data: { text: 'Trigger generation' },
+                  children: [
+                    { data: { text: 'Visible vs Invisible trigger' } },
+                    { data: { text: 'Non-semantic vs Semantic trigger' } },
+                    { data: { text: 'Manually-designed vs Learnable trigger' } },
+                    { data: { text: 'Digital vs Physical trigger' } }
+                  ]
+                },
+                {
+                  data: { text: 'Sample selection' },
+                  children: [
+                    { data: { text: 'Random vs Non-random selection' } }
+                  ]
+                },
+                {
+                  data: { text: 'Trigger fusion' },
+                  children: [
+                    { data: { text: 'Additive vs Non-additive trigger' } },
+                    { data: { text: 'Sample-agnostic vs Sample-specific trigger' } },
+                    { data: { text: 'Static vs Dynamic trigger' } }
+                  ]
+                },
+                {
+                  data: { text: 'Target class' },
+                  children: [
+                    { data: { text: 'Single-target vs Multi-target class' } },
+                    { data: { text: 'Label-inconsistent vs Label-consistent attack' } }
+                  ]
+                }
+              ]
+            },
+            {
+              data: { text: 'Training-controllable' },
+              children: [
+                { data: { text: 'One-stage vs Two-stage training' } },
+                { data: { text: 'Full vs Partial access of training data' } },
+                { data: { text: 'Full vs Partial control of training process' } },
+                { data: { text: 'Controlling different training components' } }
+              ]
+            }
+          ]
+        },
+        {
+          data: { text: 'Backdoor activation' },
+          children: [
+            { data: { text: 'Regular activation' } },
+            { data: { text: 'Backdoor re-activation attack' } }
+          ]
+        }
+      ]
+    },
+
+    /* =============== Weight attack ================= */
+    {
+      data: { text: 'Weight attack' },
+      children: [
+        {
+          data: { text: 'Adversarial weight injection' },
+          children: [
+            {
+              data: { text: 'Parameter modification (post-training)' },
+              children: [
+                { data: { text: 'White-box' } },
+                { data: { text: 'Black-box' } }
+              ]
+            },
+            {
+              data: { text: 'Bit-flip (deployment)' },
+              children: [
+                { data: { text: 'Without trigger' } },
+                { data: { text: 'With trigger' } }
+              ]
+            }
+          ]
+        },
+        {
+          data: { text: 'Adversarial weight activation' },
+          children: [
+            { data: { text: 'Regular activation' } }
+          ]
+        }
+      ]
+    },
+
+    /* =============== Adversarial examples ================= */
+    {
+      data: { text: 'Adversarial examples' },
+      children: [
+        {
+          data: { text: 'White-box attack' },
+          children: [
+            {
+              data: { text: 'Perturbation type' },
+              children: [
+                { data: { text: 'Optimization-based vs Learning-based' } },
+                { data: { text: 'Digital vs Physical' } },
+                { data: { text: 'Sample-specific vs Sample-agnostic' } },
+                { data: { text: 'Additive vs Non-additive' } },
+                { data: { text: 'Dense vs Sparse' } }
+              ]
+            },
+            {
+              data: { text: 'Output type' },
+              children: [
+                { data: { text: 'Untargeted vs Targeted attack' } },
+                { data: { text: 'Factorized vs Structured output' } }
+              ]
+            }
+          ]
+        },
+        {
+          data: { text: 'Black-box attack' },
+          children: [
+            {
+              data: { text: 'Score-based' },
+              children: [
+                { data: { text: 'Random search vs Gradient estimation' } },
+                { data: { text: 'Static vs Adaptive surrogate model' } }
+              ]
+            },
+            {
+              data: { text: 'Decision-based' },
+              children: [
+                { data: { text: 'Random search vs Gradient estimation' } }
+              ]
+            }
+          ]
+        },
+        {
+          data: { text: 'Transfer-based attack' },
+          children: [
+            {
+              data: { text: 'Example-level transferability' },
+              children: [
+                { data: { text: 'Common perturbation' } },
+                { data: { text: 'Common parametric model' } },
+                { data: { text: 'Common marginal distribution' } },
+                { data: { text: 'Common conditional distribution' } },
+                { data: { text: 'Similar gradient' } }
+              ]
+            },
+            {
+              data: { text: 'Model-level transferability' },
+              children: [
+                { data: { text: 'Data perspective' } },
+                { data: { text: 'Optimization perspective' } },
+                { data: { text: 'Loss perspective' } },
+                { data: { text: 'Surrogate model perspective' } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+/* --------- 2. 按深度批量着色 --------- */
+const depthPalette = [
+  { fill:'#800080', stroke:'#666666', font:'#ffffff' },  // depth-0  AML
+  { fill:'#ffffff', stroke:'#666666', font:'#000000' },  // depth-1  三大攻击类别
+  { fill:'#cfe2ff', stroke:'#3d7eff', font:'#0d318a' },  // depth-2  浅蓝
+  { fill:'#fff4cf', stroke:'#f0c240', font:'#8a5700' },  // depth-3  浅黄
+  { fill:'#ffe6e6', stroke:'#ff9e9e', font:'#8a1a1a' },  // depth-4  浅红
+  { fill:'#e4fbe4', stroke:'#71d071', font:'#0b5015' }   // depth-5+ 浅绿
+];
+
+function applyPalette (node, depth = 0) {
+  const idx  = Math.min(depth, depthPalette.length - 1);
+  const p    = depthPalette[idx];
+  Object.assign(node.data, {
+    fillColor   : p.fill,
+    strokeColor : p.stroke,
+    fontColor   : p.font
+  });
+  (node.children || []).forEach(c => applyPalette(c, depth + 1));
+}
+applyPalette(data);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const MindMap = window.simpleMindMap.default;
+
+  const mm = new MindMap({
+    el:   document.getElementById('mindMapContainer'),
+    data: data,
+    layout: 'mindMap',
+    mousewheelAction: 'zoom'
+  });
+
+  mm.resize();
+  window.addEventListener('resize', () => mm.resize());
+});
+</script>
+<!-- ========== End Scripts ========== -->
+</body>
+</html>
