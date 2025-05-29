@@ -34,12 +34,14 @@
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet"
       href="https://unpkg.com/simple-mind-map/dist/simpleMindMap.css">
+  <link rel="stylesheet" href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
   <script src="https://unpkg.com/simple-mind-map/dist/simpleMindMap.umd.min.js"></script>
+  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -532,5 +534,110 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <!-- ========== End Scripts ========== -->
+
+<!-- ========== Table ========== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Associated Categorizations of Each Individual
+      Method</h2>
+
+    <div class="tabs is-toggle is-centered" id="ratioTabs">
+      <ul>
+        <li class="is-active" data-target="c3"><a>C3</a></li>
+        <li data-target="c4"><a>C4</a></li>
+        <li data-target="c5"><a>C5</a></li>
+        <li data-target="c6"><a>C6</a></li>
+        <li data-target="c7"><a>C7</a></li>
+      </ul>
+    </div>
+
+    <div id="c3" class="ratio-table"></div>
+    <div id="c4" class="ratio-table is-hidden"></div>
+    <div id="c5" class="ratio-table is-hidden"></div>
+    <div id="c6" class="ratio-table is-hidden"></div>
+    <div id="c7" class="ratio-table is-hidden"></div>
+  </div>
+</section>
+
+<script>
+const dataC3 = [["BadNets: Evaluating Backdooring Attacks on Deep Neural Networks","IEEE Access","2019",["Visible","Non-semantic","Manual","Digital","Physical","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target","Multi-target"]],["Poison Frogs! Targeted Clean-Label Poisoning Attacks on Neural Networks","arXiv","2017",["Invisible","Non-semantic","Manual","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Trojaning Attack on Neural Networks","NDSS","2018",["Visible","Non-semantic","Learnable","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Poisoning the Unlabeled Dataset of Semi-Supervised Learning","NeurIPS","2018",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-specific","Label-consistent","Single-target"]],["A New Backdoor Attack in CNN by Training Set Corruption Without Label Poisoning","ICIP","2019",["Visible","Non-semantic","Manual","Digital","Additive","Static","Sample-agnostic","Label-consistent","Single-target"]],["Label-Consistent Backdoor Attacks","arXiv","2019",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-specific","Label-consistent","Single-target"]],["Latent Backdoor Attacks on Deep Neural Networks","CCS","2019",["Visible","Non-semantic","Learnable","Digital","Physical","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Hidden Trigger Backdoor Attacks","AAAI","2020",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-specific","Label-consistent","Single-target"]],["Backdoor Trigger Design With Static Patterns","CODASPY","2020",["Invisible","Non-semantic","Manual","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Backdoor Trigger Design With Adaptive Patterns","CODASPY","2020",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-agnostic","Label-inconsistent","Single-target"]],["Clean-Label Backdoor Attacks","CVPR","2020",["Visible","Non-semantic","Learnable","Digital","Additive","Static","Sample-agnostic","Label-consistent","Single-target"]],["Reflection Backdoor: A Natural Backdoor Attack on Deep Neural Networks","ECCV","2020",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-agnostic","Label-consistent","Single-target"]],["Invisible Backdoor Attack With Trigger Designed From Perturbed Samples","arXiv","2020",["Invisible","Non-semantic","Learnable","Digital","Physical","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["DeHiB: A Deep Hidden Backdoor Attack","AAAI","2021",["Visible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-specific","Label-consistent","Single-target"]],["Backdoor Attacks Against Deep Learning Systems in the Physical World","CVPR","2021",["Visible","Non-semantic","Manual","Physical","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Invisible Backdoor Attack With Hidden Trigger","ICLR Workshop","2021",["Invisible","Semantic","Manual","Digital","Non-additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["Invisible Backdoor Via Steganography","IEEE TDSC","2021",["Invisible","Non-semantic","Manual","Digital","Additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["Invisible Backdoor Via Regularization","IEEE TDSC","2021",["Invisible","Non-semantic","Learnable","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Invisible Backdoor Attack With Sample‐Specific Triggers","INFOCOM","2021",["Invisible","Non-semantic","Learnable","Digital","Additive","Static","Sample-agnostic","Label-consistent","Single-target"]],["ROBNET: Robust Neural Network Against Multiple Backdoor Attacks","IEEE JSAC","2021",["Visible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-agnostic","Label-inconsistent","Single-target","Multi-target"]],["AdvDoor: Adversarial Hidden Backdoor Attack","ISSTA","2021",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-agnostic","Label-inconsistent","Single-target"]],["PCBA: Perceptual Content Based Backdoor Attack","ICCV","2021",["Visible","Non-semantic","Learnable","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["PointPBA: Point Cloud Backdoor Attack With Shape Oriented Trigger","ICCV","2021",["Visible","Non-semantic","Manual","Digital","Non-additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["PointCPB: Point Cloud Backdoor Attack With Pattern Oriented Trigger","ICCV","2021",["Visible","Non-semantic","Learnable","Digital","Non-additive","Dynamic","Sample-specific","Label-consistent","Single-target"]],["SSBA: Style‐Transfer Backdoor Attack","ICCV","2021",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["Invisible Backdoor Attack in Images Via Frequency Domain","ICASSP","2022",["Invisible","Non-semantic","Learnable","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Dynamic Random Backdoor Attacks","Euro S&P","2022",["Visible","Non-semantic","Manual","Digital","Additive","Dynamic","Sample-agnostic","Label-inconsistent","Single-target","Multi-target"]],["FTrojan: Feature‐space Trojan Attack","ECCV","2022",["Invisible","Non-semantic","Manual","Digital","Non-additive","Dynamic","Sample-agnostic","Label-inconsistent","Single-target"]],["Sleeper Agent: Scalable Hidden Backdoor Attack","NeurIPS","2022",["Visible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-agnostic","Label-consistent","Single-target"]],["PTB: Physical Trojan Backdoor","C & S","2022",["Visible","Non-semantic","Manual","Physical","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["FaceHack: Trigger Generation Through Face Reflection","IEEE TBBIS","2022",["Invisible","Non-semantic","Manual","Digital","Non-additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["AdvPatch: Physical Backdoor Via Adversarial Patches","MM","2022",["Visible","Non-semantic","Manual","Physical","Additive","Static","Sample-agnostic","Label-consistent","Single-target"]],["IRBA: Imperceptible Backdoor Attack","arXiv","2022",["Invisible","Non-semantic","Manual","Digital","Non-additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["Dispersed Trigger: Towards Robust Backdoor","IEEE TIFS","2022",["Invisible","Non-semantic","Manual","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Adap-Blend: Revisiting Blended Backdoor","ICLR","2023",["Visible","Non-semantic","Manual","Digital","Additive","Dynamic","Sample-agnostic","Label-inconsistent","Single-target"]],["Entropy Preserved Invisible Backdoor","CVPR","2023",["Invisible","Non-semantic","Learnable","Digital","Non-additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["Color Backdoor Attack","CVPR","2023",["Invisible","Non-semantic","Learnable","Digital","Non-additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["VSSC: Vision Semantic Style-based Backdoor","arXiv","2023",["Visible","Semantic","Learnable","Digital","Physical","Additive","Dynamic","Sample-specific","Label-inconsistent","Single-target","Multi-target"]],["FLIP: Fine-grained Label-Leakage Poisoning","NeurIPS","2023",["Visible","Non-semantic","Manual","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]]];
+
+const dataC4 = [];
+const dataC5 = [];
+const dataC6 = [];
+const dataC7 = [];
+
+// Color
+const PALETTE = ['#cfe2ff','#fff4cf','#ffe6e6','#e4fbe4','#fde2ff',
+                 '#e2e3e5','#d0f0fd','#f5d0fd','#d7d7ff','#e8d7ff'];
+const COLOR_CACHE = {};
+function getColor(domain, key){
+  COLOR_CACHE[domain] ??= new Map();
+  const map = COLOR_CACHE[domain];
+  if (!map.has(key)) map.set(key, PALETTE[map.size % PALETTE.length]);
+  return map.get(key);
+}
+
+function renderTable({id, rows, labelCols}){
+
+  const columns = [
+    {name:'Method'},
+    {name:'Venue',
+      formatter:v=>gridjs.html(`<span class="tag" style="background:${getColor('venue',v)}">${v}</span>`)},
+    {name:'Time'}
+  ];
+
+  labelCols.forEach((lbl, idx)=>{
+    columns.push({
+      name: lbl,
+      formatter: val=>{
+        const arr = Array.isArray(val) ? val : (val ? [val] : []);
+        return gridjs.html(arr.map(t=>
+          `<span class="tag" style="background:${getColor(lbl,t)};margin:2px">${t}</span>`
+        ).join(''));
+      }
+    });
+  });
+
+  const data = rows.map(r=>{
+    if (Array.isArray(r)) {
+      return r;
+    } else {
+      const base = [r.method ?? r.key, r.venue, r.time];
+      const extras = labelCols.map(c=>r.labels?.[c] ?? '');
+      return base.concat(extras);
+    }
+  });
+
+  new gridjs.Grid({
+    columns,
+    data,
+    sort:true,
+    pagination:{limit:8},
+    resizable: true
+  }).render(document.getElementById(id));
+}
+
+renderTable({id:'c3', rows:dataC3, labelCols:['Data-poisoning based backdoor attack']});
+renderTable({id:'c4', rows:dataC4, labelCols:['CA(%)','ASR(%)']});
+renderTable({id:'c5', rows:dataC5, labelCols:['CA(%)','ASR(%)']});
+renderTable({id:'c6', rows:dataC6, labelCols:['RA(%)','BA(%)']});
+renderTable({id:'c7', rows:dataC7, labelCols:['Foo','Bar']});
+
+document.querySelectorAll('#ratioTabs li').forEach(li => {
+  li.addEventListener('click', () => {
+    const target = li.dataset.target;
+    document.querySelectorAll('.ratio-table')
+            .forEach(div => div.classList.toggle('is-hidden', div.id !== target));
+    document.querySelectorAll('#ratioTabs li')
+            .forEach(el => el.classList.toggle('is-active', el === li));
+  });
+});
+</script>
+
+<style>
+.ratio-table { margin-top: 1rem; }
+</style>
+
 </body>
 </html>
