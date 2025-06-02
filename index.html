@@ -460,7 +460,7 @@
   <script>
     const dataC3 = [
       [
-        "BadNets: Evaluating Backdooring Attacks on Deep Neural Networks",
+        "<a href='https://arxiv.org/abs/1708.06733' target='_blank'>BadNets: Evaluating Backdooring Attacks on Deep Neural Networks</a>",
         "IEEE Access",
         "2019",
         ["Visible", "Non-semantic", "Manual", "Digital", "Physical", "Additive", "Static", "Sample-agnostic", "Label-inconsistent", "Single-target", "Multi-target"]
@@ -1572,7 +1572,10 @@
     function renderTable({ id, rows, labelCols }) {
 
       const columns = [
-        { name: 'Title' },
+        {
+          name: 'Title',
+          formatter: cell => gridjs.html(cell)
+        },
         {
           name: 'Venue',
           formatter: v => gridjs.html(`<span class="tag" style="background:${getColor('venue', v)}">${v}</span>`)
