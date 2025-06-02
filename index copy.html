@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Academic Project Page</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet"
+      href="https://unpkg.com/simple-mind-map/dist/simpleMindMap.css">
+  <link rel="stylesheet" href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://unpkg.com/simple-mind-map/dist/simpleMindMap.umd.min.js"></script>
+  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <span class="author-block">
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Institution Name<br>Conferance name and year</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="section">
+  <div class="container is-max-desktop" style="padding-top:2rem;">
+    <div id="mindMapContainer"
+         style="width:100%; height:500px; border:1px solid #ddd;"></div>
+  </div>
+</section>
+
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Second image description.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+         Third image description.
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Fourth image description.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+
+<!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <!-- Youtube embed code here -->
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <!-- Your video file here -->
+            <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+<!-- ========== Scripts for Mind Map========== -->
+<script src="https://unpkg.com/simple-mind-map@0.14.0/dist/simpleMindMap.umd.min.js"></script>
+
+<script>
+/* --------- 1. 定义原始层次数据 --------- */
+const data = {
+  data: { text: 'Adversarial Machine Learning' },
+  children: [
+    /* =============== Backdoor attack ================= */
+    {
+      data: { text: 'Backdoor attack' },
+      children: [
+        {
+          data: { text: 'Backdoor injection' },
+          children: [
+            {
+              data: { text: 'Data-poisoning' },
+              children: [
+                {
+                  data: { text: 'Trigger generation' },
+                  children: [
+                    { data: { text: 'Visible vs Invisible trigger' } },
+                    { data: { text: 'Non-semantic vs Semantic trigger' } },
+                    { data: { text: 'Manually-designed vs Learnable trigger' } },
+                    { data: { text: 'Digital vs Physical trigger' } }
+                  ]
+                },
+                {
+                  data: { text: 'Sample selection' },
+                  children: [
+                    { data: { text: 'Random vs Non-random selection' } }
+                  ]
+                },
+                {
+                  data: { text: 'Trigger fusion' },
+                  children: [
+                    { data: { text: 'Additive vs Non-additive trigger' } },
+                    { data: { text: 'Sample-agnostic vs Sample-specific trigger' } },
+                    { data: { text: 'Static vs Dynamic trigger' } }
+                  ]
+                },
+                {
+                  data: { text: 'Target class' },
+                  children: [
+                    { data: { text: 'Single-target vs Multi-target class' } },
+                    { data: { text: 'Label-inconsistent vs Label-consistent attack' } }
+                  ]
+                }
+              ]
+            },
+            {
+              data: { text: 'Training-controllable' },
+              children: [
+                { data: { text: 'One-stage vs Two-stage training' } },
+                { data: { text: 'Full vs Partial access of training data' } },
+                { data: { text: 'Full vs Partial control of training process' } },
+                { data: { text: 'Controlling different training components' } }
+              ]
+            }
+          ]
+        },
+        {
+          data: { text: 'Backdoor activation' },
+          children: [
+            { data: { text: 'Regular activation' } },
+            { data: { text: 'Backdoor re-activation attack' } }
+          ]
+        }
+      ]
+    },
+
+    /* =============== Weight attack ================= */
+    {
+      data: { text: 'Weight attack' },
+      children: [
+        {
+          data: { text: 'Adversarial weight injection' },
+          children: [
+            {
+              data: { text: 'Parameter modification (post-training)' },
+              children: [
+                { data: { text: 'White-box' } },
+                { data: { text: 'Black-box' } }
+              ]
+            },
+            {
+              data: { text: 'Bit-flip (deployment)' },
+              children: [
+                { data: { text: 'Without trigger' } },
+                { data: { text: 'With trigger' } }
+              ]
+            }
+          ]
+        },
+        {
+          data: { text: 'Adversarial weight activation' },
+          children: [
+            { data: { text: 'Regular activation' } }
+          ]
+        }
+      ]
+    },
+
+    /* =============== Adversarial examples ================= */
+    {
+      data: { text: 'Adversarial examples' },
+      children: [
+        {
+          data: { text: 'White-box attack' },
+          children: [
+            {
+              data: { text: 'Perturbation type' },
+              children: [
+                { data: { text: 'Optimization-based vs Learning-based' } },
+                { data: { text: 'Digital vs Physical' } },
+                { data: { text: 'Sample-specific vs Sample-agnostic' } },
+                { data: { text: 'Additive vs Non-additive' } },
+                { data: { text: 'Dense vs Sparse' } }
+              ]
+            },
+            {
+              data: { text: 'Output type' },
+              children: [
+                { data: { text: 'Untargeted vs Targeted attack' } },
+                { data: { text: 'Factorized vs Structured output' } }
+              ]
+            }
+          ]
+        },
+        {
+          data: { text: 'Black-box attack' },
+          children: [
+            {
+              data: { text: 'Score-based' },
+              children: [
+                { data: { text: 'Random search vs Gradient estimation' } },
+                { data: { text: 'Static vs Adaptive surrogate model' } }
+              ]
+            },
+            {
+              data: { text: 'Decision-based' },
+              children: [
+                { data: { text: 'Random search vs Gradient estimation' } }
+              ]
+            }
+          ]
+        },
+        {
+          data: { text: 'Transfer-based attack' },
+          children: [
+            {
+              data: { text: 'Example-level transferability' },
+              children: [
+                { data: { text: 'Common perturbation' } },
+                { data: { text: 'Common parametric model' } },
+                { data: { text: 'Common marginal distribution' } },
+                { data: { text: 'Common conditional distribution' } },
+                { data: { text: 'Similar gradient' } }
+              ]
+            },
+            {
+              data: { text: 'Model-level transferability' },
+              children: [
+                { data: { text: 'Data perspective' } },
+                { data: { text: 'Optimization perspective' } },
+                { data: { text: 'Loss perspective' } },
+                { data: { text: 'Surrogate model perspective' } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+/* --------- 2. 按深度批量着色 --------- */
+const depthPalette = [
+  { fill:'#800080', stroke:'#666666', font:'#ffffff' },  // depth-0  AML
+  { fill:'#ffffff', stroke:'#666666', font:'#000000' },  // depth-1  三大攻击类别
+  { fill:'#cfe2ff', stroke:'#3d7eff', font:'#0d318a' },  // depth-2  浅蓝
+  { fill:'#fff4cf', stroke:'#f0c240', font:'#8a5700' },  // depth-3  浅黄
+  { fill:'#ffe6e6', stroke:'#ff9e9e', font:'#8a1a1a' },  // depth-4  浅红
+  { fill:'#e4fbe4', stroke:'#71d071', font:'#0b5015' }   // depth-5+ 浅绿
+];
+
+function applyPalette (node, depth = 0) {
+  const idx  = Math.min(depth, depthPalette.length - 1);
+  const p    = depthPalette[idx];
+  Object.assign(node.data, {
+    fillColor   : p.fill,
+    strokeColor : p.stroke,
+    fontColor   : p.font
+  });
+  (node.children || []).forEach(c => applyPalette(c, depth + 1));
+}
+applyPalette(data);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const MindMap = window.simpleMindMap.default;
+
+  const mm = new MindMap({
+    el:   document.getElementById('mindMapContainer'),
+    data: data,
+    layout: 'mindMap',
+    mousewheelAction: 'zoom'
+  });
+
+  mm.resize();
+  window.addEventListener('resize', () => mm.resize());
+});
+</script>
+<!-- ========== End Scripts ========== -->
+
+<!-- ========== Table ========== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Associated Categorizations of Each Individual
+      Method</h2>
+
+    <div class="tabs is-toggle is-centered" id="ratioTabs">
+      <ul>
+        <li class="is-active" data-target="c3"><a>C3</a></li>
+        <li data-target="c4"><a>C4</a></li>
+        <li data-target="c5"><a>C5</a></li>
+        <li data-target="c6"><a>C6</a></li>
+        <li data-target="c7"><a>C7</a></li>
+      </ul>
+    </div>
+
+    <div id="c3" class="ratio-table"></div>
+    <div id="c4" class="ratio-table is-hidden"></div>
+    <div id="c5" class="ratio-table is-hidden"></div>
+    <div id="c6" class="ratio-table is-hidden"></div>
+    <div id="c7" class="ratio-table is-hidden"></div>
+  </div>
+</section>
+
+<script>
+const dataC3 = [["BadNets: Evaluating Backdooring Attacks on Deep Neural Networks","IEEE Access","2019",["Visible","Non-semantic","Manual","Digital","Physical","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target","Multi-target"]],["Poison Frogs! Targeted Clean-Label Poisoning Attacks on Neural Networks","arXiv","2017",["Invisible","Non-semantic","Manual","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Trojaning Attack on Neural Networks","NDSS","2018",["Visible","Non-semantic","Learnable","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Poisoning the Unlabeled Dataset of Semi-Supervised Learning","NeurIPS","2018",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-specific","Label-consistent","Single-target"]],["A New Backdoor Attack in CNN by Training Set Corruption Without Label Poisoning","ICIP","2019",["Visible","Non-semantic","Manual","Digital","Additive","Static","Sample-agnostic","Label-consistent","Single-target"]],["Label-Consistent Backdoor Attacks","arXiv","2019",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-specific","Label-consistent","Single-target"]],["Latent Backdoor Attacks on Deep Neural Networks","CCS","2019",["Visible","Non-semantic","Learnable","Digital","Physical","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Hidden Trigger Backdoor Attacks","AAAI","2020",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-specific","Label-consistent","Single-target"]],["Backdoor Trigger Design With Static Patterns","CODASPY","2020",["Invisible","Non-semantic","Manual","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Backdoor Trigger Design With Adaptive Patterns","CODASPY","2020",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-agnostic","Label-inconsistent","Single-target"]],["Clean-Label Backdoor Attacks","CVPR","2020",["Visible","Non-semantic","Learnable","Digital","Additive","Static","Sample-agnostic","Label-consistent","Single-target"]],["Reflection Backdoor: A Natural Backdoor Attack on Deep Neural Networks","ECCV","2020",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-agnostic","Label-consistent","Single-target"]],["Invisible Backdoor Attack With Trigger Designed From Perturbed Samples","arXiv","2020",["Invisible","Non-semantic","Learnable","Digital","Physical","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["DeHiB: A Deep Hidden Backdoor Attack","AAAI","2021",["Visible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-specific","Label-consistent","Single-target"]],["Backdoor Attacks Against Deep Learning Systems in the Physical World","CVPR","2021",["Visible","Non-semantic","Manual","Physical","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Invisible Backdoor Attack With Hidden Trigger","ICLR Workshop","2021",["Invisible","Semantic","Manual","Digital","Non-additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["Invisible Backdoor Via Steganography","IEEE TDSC","2021",["Invisible","Non-semantic","Manual","Digital","Additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["Invisible Backdoor Via Regularization","IEEE TDSC","2021",["Invisible","Non-semantic","Learnable","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Invisible Backdoor Attack With Sample‐Specific Triggers","INFOCOM","2021",["Invisible","Non-semantic","Learnable","Digital","Additive","Static","Sample-agnostic","Label-consistent","Single-target"]],["ROBNET: Robust Neural Network Against Multiple Backdoor Attacks","IEEE JSAC","2021",["Visible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-agnostic","Label-inconsistent","Single-target","Multi-target"]],["AdvDoor: Adversarial Hidden Backdoor Attack","ISSTA","2021",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-agnostic","Label-inconsistent","Single-target"]],["PCBA: Perceptual Content Based Backdoor Attack","ICCV","2021",["Visible","Non-semantic","Learnable","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["PointPBA: Point Cloud Backdoor Attack With Shape Oriented Trigger","ICCV","2021",["Visible","Non-semantic","Manual","Digital","Non-additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["PointCPB: Point Cloud Backdoor Attack With Pattern Oriented Trigger","ICCV","2021",["Visible","Non-semantic","Learnable","Digital","Non-additive","Dynamic","Sample-specific","Label-consistent","Single-target"]],["SSBA: Style‐Transfer Backdoor Attack","ICCV","2021",["Invisible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["Invisible Backdoor Attack in Images Via Frequency Domain","ICASSP","2022",["Invisible","Non-semantic","Learnable","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Dynamic Random Backdoor Attacks","Euro S&P","2022",["Visible","Non-semantic","Manual","Digital","Additive","Dynamic","Sample-agnostic","Label-inconsistent","Single-target","Multi-target"]],["FTrojan: Feature‐space Trojan Attack","ECCV","2022",["Invisible","Non-semantic","Manual","Digital","Non-additive","Dynamic","Sample-agnostic","Label-inconsistent","Single-target"]],["Sleeper Agent: Scalable Hidden Backdoor Attack","NeurIPS","2022",["Visible","Non-semantic","Learnable","Digital","Additive","Dynamic","Sample-agnostic","Label-consistent","Single-target"]],["PTB: Physical Trojan Backdoor","C & S","2022",["Visible","Non-semantic","Manual","Physical","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["FaceHack: Trigger Generation Through Face Reflection","IEEE TBBIS","2022",["Invisible","Non-semantic","Manual","Digital","Non-additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["AdvPatch: Physical Backdoor Via Adversarial Patches","MM","2022",["Visible","Non-semantic","Manual","Physical","Additive","Static","Sample-agnostic","Label-consistent","Single-target"]],["IRBA: Imperceptible Backdoor Attack","arXiv","2022",["Invisible","Non-semantic","Manual","Digital","Non-additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["Dispersed Trigger: Towards Robust Backdoor","IEEE TIFS","2022",["Invisible","Non-semantic","Manual","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]],["Adap-Blend: Revisiting Blended Backdoor","ICLR","2023",["Visible","Non-semantic","Manual","Digital","Additive","Dynamic","Sample-agnostic","Label-inconsistent","Single-target"]],["Entropy Preserved Invisible Backdoor","CVPR","2023",["Invisible","Non-semantic","Learnable","Digital","Non-additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["Color Backdoor Attack","CVPR","2023",["Invisible","Non-semantic","Learnable","Digital","Non-additive","Dynamic","Sample-specific","Label-inconsistent","Single-target"]],["VSSC: Vision Semantic Style-based Backdoor","arXiv","2023",["Visible","Semantic","Learnable","Digital","Physical","Additive","Dynamic","Sample-specific","Label-inconsistent","Single-target","Multi-target"]],["FLIP: Fine-grained Label-Leakage Poisoning","NeurIPS","2023",["Visible","Non-semantic","Manual","Digital","Additive","Static","Sample-agnostic","Label-inconsistent","Single-target"]]];
+
+const dataC4 = [];
+const dataC5 = [];
+const dataC6 = [];
+const dataC7 = [];
+
+// Color
+const PALETTE = ['#cfe2ff','#fff4cf','#ffe6e6','#e4fbe4','#fde2ff',
+                 '#e2e3e5','#d0f0fd','#f5d0fd','#d7d7ff','#e8d7ff'];
+const COLOR_CACHE = {};
+function getColor(domain, key){
+  COLOR_CACHE[domain] ??= new Map();
+  const map = COLOR_CACHE[domain];
+  if (!map.has(key)) map.set(key, PALETTE[map.size % PALETTE.length]);
+  return map.get(key);
+}
+
+function renderTable({id, rows, labelCols}){
+
+  const columns = [
+    {name:'Method'},
+    {name:'Venue',
+      formatter:v=>gridjs.html(`<span class="tag" style="background:${getColor('venue',v)}">${v}</span>`)},
+    {name:'Time'}
+  ];
+
+  labelCols.forEach((lbl, idx)=>{
+    columns.push({
+      name: lbl,
+      formatter: val=>{
+        const arr = Array.isArray(val) ? val : (val ? [val] : []);
+        return gridjs.html(arr.map(t=>
+          `<span class="tag" style="background:${getColor(lbl,t)};margin:2px">${t}</span>`
+        ).join(''));
+      }
+    });
+  });
+
+  const data = rows.map(r=>{
+    if (Array.isArray(r)) {
+      return r;
+    } else {
+      const base = [r.method ?? r.key, r.venue, r.time];
+      const extras = labelCols.map(c=>r.labels?.[c] ?? '');
+      return base.concat(extras);
+    }
+  });
+
+  new gridjs.Grid({
+    columns,
+    data,
+    sort:true,
+    pagination:{limit:8},
+    resizable: true
+  }).render(document.getElementById(id));
+}
+
+renderTable({id:'c3', rows:dataC3, labelCols:['Data-poisoning based backdoor attack']});
+renderTable({id:'c4', rows:dataC4, labelCols:['CA(%)','ASR(%)']});
+renderTable({id:'c5', rows:dataC5, labelCols:['CA(%)','ASR(%)']});
+renderTable({id:'c6', rows:dataC6, labelCols:['RA(%)','BA(%)']});
+renderTable({id:'c7', rows:dataC7, labelCols:['Foo','Bar']});
+
+document.querySelectorAll('#ratioTabs li').forEach(li => {
+  li.addEventListener('click', () => {
+    const target = li.dataset.target;
+    document.querySelectorAll('.ratio-table')
+            .forEach(div => div.classList.toggle('is-hidden', div.id !== target));
+    document.querySelectorAll('#ratioTabs li')
+            .forEach(el => el.classList.toggle('is-active', el === li));
+  });
+});
+</script>
+
+<style>
+.ratio-table { margin-top: 1rem; }
+</style>
+
+</body>
+</html>
