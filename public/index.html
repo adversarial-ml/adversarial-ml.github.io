@@ -143,9 +143,9 @@
           <source src="static/videos/intro.mp4" type="video/mp4">
         </video>
         <h2 class="subtitle has-text-centered">
-          A comprehensive survey unifying adversarial machine learning attacks across the ML lifecycle, providing a
-          hierarchical taxonomy and mathematical framework for understanding backdoor attacks, weight attacks, and
-          adversarial example attacks.
+          Two comprehensive surveys unifying adversarial machine learning attacks and defenses across the ML lifecycle, providing a
+          hierarchical taxonomy and mathematical framework for understanding AML attacks (backdoor attacks, weight attacks, and
+          adversarial example attacks) and defenses (different stages include pre-training, training, post-training, deployment, and inference stage).
         </h2>
       </div>
     </div>
@@ -161,25 +161,29 @@
           <div class="content has-text-justified">
             <p>
               Adversarial machine learning (AML) investigates vulnerabilities that cause machine learning systems to
-              produce predictions deviating from human expectations. Emerging paradigms—including backdoor attacks (at
-              pre-training, training, inference stages), weight attacks (at post-training, deployment, inference
-              stages), and adversarial example attacks (at inference stage)—exploit these vulnerabilities across the
-              machine learning lifecycle. Despite their shared adversarial objectives, current research efforts remain
-              fragmented, lacking a unified perspective to guide systematic understanding.
+              produce predictions deviating from human expectations. We unify the landscape of attacks and defenses 
+              through a lifecycle-aware perspective spanning pre-training, training, post-training, deployment, and 
+              inference. On the attack side, we synthesize three primary paradigms—backdoor attacks (arising through 
+              data poisoning or training control, activated at inference), weight attacks (injected post-training or 
+              at deployment via bit-flips), and adversarial examples (crafted at inference)—and clarify their connections 
+              and differences across stages. On the defense side, we present a coherent taxonomy aligned to the same lifecycle: 
+              pre-training (robust model architectures; poisoned data detection), training (adversarial training; secure 
+              centralized and decentralized training), post-training (backdoor detection, target-class detection, and mitigation/removal), 
+              deployment (model enhancement and fingerprint verification against weight attacks), and inference (poisoned-query detection, 
+              robust prediction, adversarial-query/sequence detection, and randomized/dynamic inference).
             </p>
             <p>
-              This work bridges this gap through three key contributions: (1) a lifecycle-aware mathematical framework
-              unifying definitions of AML threats, (2) a hierarchical taxonomy categorizing attack methodologies while
-              clarifying inter-paradigm relationships, and (3) extended analysis of AML in generative models and
-              beneficial applications.
+              These works bridge this gap through three key contributions: (1) offers formal, lifecycle-aware 
+              definitions of AML threats, (2) organizes both attack methodologies and stage-specific defenses 
+              into hierarchical taxonomies while elucidating inter-paradigm relationships, and (3) extends analysis 
+              to generative and multimodal models as well as beneficial applications.
             </p>
             <p>
-              Our findings highlight the urgent need for robust security mechanisms as adversarial capabilities
-              increasingly threaten safety-critical systems. By revealing connections between attacks across development
-              stages, we emphasize that isolated defense strategies inevitably fail against coordinated multi-stage
-              attacks. The research community must prioritize holistic defense strategies incorporating lifecycle-aware
-              monitoring, adaptive hardening techniques, and unified threat models. This survey provides both
-              theoretical foundations and practical guidelines to advance secure machine learning ecosystems.
+              Our findings emphasize that piecemeal, single-stage defenses are insufficient against coordinated, 
+              multi-stage attacks; instead, holistic, cross-stage strategies and lifecycle-aware monitoring are essential. 
+              We distill comparative insights and trade-offs (effectiveness, cost, clean-accuracy impact, scalability, 
+              generality, evasion difficulty), highlight practical considerations in safety-critical domains, and chart 
+              concrete research directions toward adaptive, automated, and comprehensive AML defenses.
             </p>
           </div>
         </div>
@@ -239,175 +243,295 @@
   <script>
     /* --------- 1. 定义原始层次数据 --------- */
     const data = {
-      data: { text: 'Adversarial Machine Learning' },
-      children: [
-        /* =============== Backdoor attack ================= */
-        {
-          data: { text: 'Backdoor attacks' },
-          children: [
-            {
-              data: { text: 'Backdoor injection' },
-              children: [
-                {
-                  data: { text: 'Data-poisoning' },
-                  children: [
-                    {
-                      data: { text: 'Trigger generation' },
-                      children: [
-                        { data: { text: 'Visible vs Invisible trigger' } },
-                        { data: { text: 'Non-semantic vs Semantic trigger' } },
-                        { data: { text: 'Manually-designed vs Learnable trigger' } },
-                        { data: { text: 'Digital vs Physical trigger' } }
-                      ]
-                    },
-                    {
-                      data: { text: 'Sample selection' },
-                      children: [
-                        { data: { text: 'Random vs Non-random selection' } }
-                      ]
-                    },
-                    {
-                      data: { text: 'Trigger fusion' },
-                      children: [
-                        { data: { text: 'Additive vs Non-additive trigger' } },
-                        { data: { text: 'Sample-agnostic vs Sample-specific trigger' } },
-                        { data: { text: 'Static vs Dynamic trigger' } }
-                      ]
-                    },
-                    {
-                      data: { text: 'Target class' },
-                      children: [
-                        { data: { text: 'Single-target vs Multi-target class' } },
-                        { data: { text: 'Label-inconsistent vs Label-consistent attack' } }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  data: { text: 'Training-controllable' },
-                  children: [
-                    { data: { text: 'One-stage vs Two-stage training' } },
-                    { data: { text: 'Full vs Partial access of training data' } },
-                    { data: { text: 'Full vs Partial control of training process' } },
-                    { data: { text: 'Controlling different training components' } }
-                  ]
-                }
-              ]
-            },
-            {
-              data: { text: 'Backdoor activation' },
-              children: [
-                { data: { text: 'Regular activation' } },
-                { data: { text: 'Backdoor re-activation attack' } }
-              ]
-            }
-          ]
-        },
+        data: { text: 'Adversarial Machine Learning' },
+        children: [
+          /* ================= Attack ================= */
+          {
+            data: { text: 'Attack' },
+            children: [
+              /* =============== Backdoor attacks =============== */
+              {
+                data: { text: 'Backdoor attacks' },
+                children: [
+                  {
+                    data: { text: 'Backdoor injection' },
+                    children: [
+                      {
+                        data: { text: 'Data-poisoning' },
+                        children: [
+                          {
+                            data: { text: 'Trigger generation' },
+                            children: [
+                              { data: { text: 'Visible vs Invisible trigger' } },
+                              { data: { text: 'Non-semantic vs Semantic trigger' } },
+                              { data: { text: 'Manually-designed vs Learnable trigger' } },
+                              { data: { text: 'Digital vs Physical trigger' } }
+                            ]
+                          },
+                          {
+                            data: { text: 'Sample selection' },
+                            children: [
+                              { data: { text: 'Random vs Non-random selection' } }
+                            ]
+                          },
+                          {
+                            data: { text: 'Trigger fusion' },
+                            children: [
+                              { data: { text: 'Additive vs Non-additive trigger' } },
+                              { data: { text: 'Sample-agnostic vs Sample-specific trigger' } },
+                              { data: { text: 'Static vs Dynamic trigger' } }
+                            ]
+                          },
+                          {
+                            data: { text: 'Target class' },
+                            children: [
+                              { data: { text: 'Single-target vs Multi-target class' } },
+                              { data: { text: 'Label-inconsistent vs Label-consistent attack' } }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        data: { text: 'Training-controllable' },
+                        children: [
+                          { data: { text: 'One-stage vs Two-stage training' } },
+                          { data: { text: 'Full vs Partial access of training data' } },
+                          { data: { text: 'Full vs Partial control of training process' } },
+                          { data: { text: 'Controlling different training components' } }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    data: { text: 'Backdoor activation' },
+                    children: [
+                      { data: { text: 'Regular activation' } },
+                      { data: { text: 'Backdoor re-activation attack' } }
+                    ]
+                  }
+                ]
+              },
 
-        /* =============== Weight attack ================= */
-        {
-          data: { text: 'Weight attacks' },
-          children: [
-            {
-              data: { text: 'Adversarial weight injection' },
-              children: [
-                {
-                  data: { text: 'Parameter modification (post-training)' },
-                  children: [
-                    { data: { text: 'White-box' } },
-                    { data: { text: 'Black-box' } }
-                  ]
-                },
-                {
-                  data: { text: 'Bit-flip (deployment)' },
-                  children: [
-                    { data: { text: 'Without trigger' } },
-                    { data: { text: 'With trigger' } }
-                  ]
-                }
-              ]
-            },
-            {
-              data: { text: 'Adversarial weight activation' },
-              children: [
-                { data: { text: 'Regular activation' } }
-              ]
-            }
-          ]
-        },
+              /* =============== Weight attacks =============== */
+              {
+                data: { text: 'Weight attacks' },
+                children: [
+                  {
+                    data: { text: 'Adversarial weight injection' },
+                    children: [
+                      {
+                        data: { text: 'Parameter modification (post-training)' },
+                        children: [
+                          { data: { text: 'White-box' } },
+                          { data: { text: 'Black-box' } }
+                        ]
+                      },
+                      {
+                        data: { text: 'Bit-flip (deployment)' },
+                        children: [
+                          { data: { text: 'Without trigger' } },
+                          { data: { text: 'With trigger' } }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    data: { text: 'Adversarial weight activation' },
+                    children: [
+                      { data: { text: 'Regular activation' } }
+                    ]
+                  }
+                ]
+              },
 
-        /* =============== Adversarial examples ================= */
-        {
-          data: { text: 'Adversarial example attacks' },
-          children: [
-            {
-              data: { text: 'White-box attack' },
-              children: [
-                {
-                  data: { text: 'Perturbation type' },
-                  children: [
-                    { data: { text: 'Optimization-based vs Learning-based' } },
-                    { data: { text: 'Digital vs Physical' } },
-                    { data: { text: 'Sample-specific vs Sample-agnostic' } },
-                    { data: { text: 'Additive vs Non-additive' } },
-                    { data: { text: 'Dense vs Sparse' } }
-                  ]
-                },
-                {
-                  data: { text: 'Output type' },
-                  children: [
-                    { data: { text: 'Untargeted vs Targeted attack' } },
-                    { data: { text: 'Factorized vs Structured output' } }
-                  ]
-                }
-              ]
-            },
-            {
-              data: { text: 'Black-box attack' },
-              children: [
-                {
-                  data: { text: 'Score-based' },
-                  children: [
-                    { data: { text: 'Random search vs Gradient estimation' } },
-                    { data: { text: 'Static vs Adaptive surrogate model' } }
-                  ]
-                },
-                {
-                  data: { text: 'Decision-based' },
-                  children: [
-                    { data: { text: 'Random search vs Gradient estimation' } }
-                  ]
-                }
-              ]
-            },
-            {
-              data: { text: 'Transfer-based attack' },
-              children: [
-                {
-                  data: { text: 'Example-level transferability' },
-                  children: [
-                    { data: { text: 'Common perturbation' } },
-                    { data: { text: 'Common parametric model' } },
-                    { data: { text: 'Common marginal distribution' } },
-                    { data: { text: 'Common conditional distribution' } },
-                    { data: { text: 'Similar gradient' } }
-                  ]
-                },
-                {
-                  data: { text: 'Model-level transferability' },
-                  children: [
-                    { data: { text: 'Data perspective' } },
-                    { data: { text: 'Optimization perspective' } },
-                    { data: { text: 'Loss perspective' } },
-                    { data: { text: 'Surrogate model perspective' } }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    };
+              /* =============== Adversarial example attacks =============== */
+              {
+                data: { text: 'Adversarial example attacks' },
+                children: [
+                  {
+                    data: { text: 'White-box attack' },
+                    children: [
+                      {
+                        data: { text: 'Perturbation type' },
+                        children: [
+                          { data: { text: 'Optimization-based vs Learning-based' } },
+                          { data: { text: 'Digital vs Physical' } },
+                          { data: { text: 'Sample-specific vs Sample-agnostic' } },
+                          { data: { text: 'Additive vs Non-additive' } },
+                          { data: { text: 'Dense vs Sparse' } }
+                        ]
+                      },
+                      {
+                        data: { text: 'Output type' },
+                        children: [
+                          { data: { text: 'Untargeted vs Targeted attack' } },
+                          { data: { text: 'Factorized vs Structured output' } }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    data: { text: 'Black-box attack' },
+                    children: [
+                      {
+                        data: { text: 'Score-based' },
+                        children: [
+                          { data: { text: 'Random search vs Gradient estimation' } },
+                          { data: { text: 'Static vs Adaptive surrogate model' } }
+                        ]
+                      },
+                      {
+                        data: { text: 'Decision-based' },
+                        children: [
+                          { data: { text: 'Random search vs Gradient estimation' } }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    data: { text: 'Transfer-based attack' },
+                    children: [
+                      {
+                        data: { text: 'Example-level transferability' },
+                        children: [
+                          { data: { text: 'Common perturbation' } },
+                          { data: { text: 'Common parametric model' } },
+                          { data: { text: 'Common marginal distribution' } },
+                          { data: { text: 'Common conditional distribution' } },
+                          { data: { text: 'Similar gradient' } }
+                        ]
+                      },
+                      {
+                        data: { text: 'Model-level transferability' },
+                        children: [
+                          { data: { text: 'Data perspective' } },
+                          { data: { text: 'Optimization perspective' } },
+                          { data: { text: 'Loss perspective' } },
+                          { data: { text: 'Surrogate model perspective' } }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+
+          /* ================= Defense ================= */
+          {
+            data: { text: 'Defense' },
+            children: [
+              /* ----- Pre-training ----- */
+              {
+                data: { text: 'Pre-training' },
+                children: [
+                  {
+                    data: { text: 'Robust model architecture' },
+                    children: [
+                      { data: { text: 'Empirical study' } },
+                      { data: { text: 'NAS for robustness' } }
+                    ]
+                  },
+                  {
+                    data: { text: 'Training data pre-processing based defense against backdoor attack' },
+                    children: [
+                      { data: { text: 'Activation anomaly in the backdoor model' } },
+                      { data: { text: 'Prediction stability to model variation' } }
+                    ]
+                  }
+                ]
+              },
+
+              /* ----- Training ----- */
+              {
+                data: { text: 'Training' },
+                children: [
+                  {
+                    data: { text: 'Adversarial training' },
+                    children: [
+                      { data: { text: 'Enhancing the robust generalization' } },
+                      { data: { text: 'Improving the training efficiency' } }
+                    ]
+                  },
+                  { data: { text: 'Secure centralized training' } },
+                  { data: { text: 'Secure decentralized training' } }
+                ]
+              },
+
+              /* ----- Post-Training ----- */
+              {
+                data: { text: 'Post-Training' },
+                children: [
+                  {
+                    data: { text: 'Backdoor detection' },
+                    children: [
+                      { data: { text: 'Feature-based detection' } },
+                      { data: { text: 'Weight-based detection' } }
+                    ]
+                  },
+                  {
+                    data: { text: 'Target Class Detection' },
+                    children: [
+                      { data: { text: 'Feature-based approaches' } },
+                      { data: { text: 'Weight-based approaches' } }
+                    ]
+                  },
+                  {
+                    data: { text: 'Backdoor Mitigation/Removal' },
+                    children: [
+                      { data: { text: 'Structure modification approaches' } },
+                      { data: { text: 'Tuning-based approaches without structural modification' } }
+                    ]
+                  }
+                ]
+              },
+
+              /* ----- Deployment ----- */
+              {
+                data: { text: 'Deployment' },
+                children: [
+                  {
+                    data: { text: 'Model Enhancement' },
+                    children: [
+                      { data: { text: 'Network architecture fortification' } },
+                      { data: { text: 'Training optimization' } },
+                      { data: { text: 'Hardware hardening' } }
+                    ]
+                  },
+                  {
+                    data: { text: 'Fingerprint Verification' },
+                    children: [
+                      { data: { text: 'Weight encoding' } },
+                      { data: { text: 'Activation verification' } }
+                    ]
+                  }
+                ]
+              },
+
+              /* ----- Inference ----- */
+              {
+                data: { text: 'Inference' },
+                children: [
+                  {
+                    data: { text: 'Inference-stage Defense against Backdoor Activation' },
+                    children: [
+                      { data: { text: 'Poisoned query detection' } },
+                      { data: { text: 'Robust prediction' } }
+                    ]
+                  },
+                  {
+                    data: { text: 'Inference-stage Defense against Adversarial Examples' },
+                    children: [
+                      { data: { text: 'Individual adversarial query' } },
+                      { data: { text: 'Sequences of malicious queries' } }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      };
 
     /* --------- 2. 按深度批量着色 --------- */
     const depthPalette = [
